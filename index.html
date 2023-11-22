@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+     <form id ='messageForm'>
+         <input type="text" name="name" id="name">
+         <input type="text" name="message" id="message">
+         <input type="submit" value="send">
+     </form>
+    <div id = 'chat'></div>
+    <script type ='module'>
+        const chatEl = document.getElementById('chat')
+        const ws = new WebSocket("ws://127.0.0.1:7000" )//соединение с  вебсокетом 
+        ws.onmessage = (message) =>{// если пришло сообщение с сервера
+            const messages= JSON.parse(message.data)  // наш массив
+            messages.forEach((val)=>{ //берем каждое значение этого массива и отрисуем его в чате
+                const messageEl = document.createElement('div')// создаю див и внего будут прилетатть сообщения 
+                messageEl.appendChild(document.createTextNode(`${val.name}: ${val.message}`))//сюда добовляем то что прилетело с сервера
+                chat.appendChild(messageEl)
+            })    
+            
+        } 
+        const send =  (event)=>{
+            event.preventDefault()
+const name = document.getElementById('name').value
+const message = document.getElementById('message').value
+ws.send(JSON.stringify({//  мы это получили топишь имя и сообщение и теперь отправляю по вебсокету
+name, message
+
+})) 
+return false// чтобы страница не бновлялась после отправки   
+        }
+        const formEl = document.getElementById('messageForm')
+formEl.addEventListener('submit', send) // когда форма будет сабмититьс яотправляю значение
+    </script>
+    
+
+    </div>
+  </body>
+</html>
