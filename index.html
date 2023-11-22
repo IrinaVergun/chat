@@ -14,7 +14,7 @@
     <div id = 'chat'></div>
     <script type ='module'>
         const chatEl = document.getElementById('chat')
-        const ws = new WebSocket("ws://127.0.0.1:7000" )//соединение с  вебсокетом 
+        const ws = new WebSocket("wss://chat-server-fdvt.onrender.com/" )//соединение с  вебсокетом 
         ws.onmessage = (message) =>{// если пришло сообщение с сервера
             const messages= JSON.parse(message.data)  // наш массив
             messages.forEach((val)=>{ //берем каждое значение этого массива и отрисуем его в чате
