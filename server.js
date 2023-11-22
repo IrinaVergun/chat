@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid"; // библиотека для айди
 import { writeFile, readFileSync, existsSync } from "fs";
 const clients = {}; // скадываю клиентов  в объект чтобы они удобно лежали
 const log = existsSync("log") && readFileSync("log");
-const wss = new WebSocketServer({ port: 7000 }); // на каком порту будет работать сервер
+const wss = new WebSocketServer({ port: process.env.PORT || 3000 }); // на каком порту будет работать сервер
 const messages = JSON.parse(log) || []; // то куда я складываю все сообщения
 
 wss.on("connection", (ws) => {
