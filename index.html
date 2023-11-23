@@ -3,13 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Чат</title>
+    <link href=style.css rel="stylesheet">
+    
   </head>
   <body>
      <form id ='messageForm'>
          <input type="text" name="name" id="name">
+        
+         <img src="./images/delete.png" class="delete"  id="del1" onclick="deleteStr1()"/>
+      
          <input type="text" name="message" id="message">
-         <input type="submit" value="send">
+         
+         <img src="./images/delete.png" class="delete" id="del2" onclick="deleteStr2()"/>
+        
+         <input type="submit" value="Отправить">
+         
+     
      </form>
     <div id = 'chat'></div>
     <script type ='module'>
@@ -36,6 +46,19 @@ return false// чтобы страница не бновлялась после 
         }
         const formEl = document.getElementById('messageForm')
 formEl.addEventListener('submit', send) // когда форма будет сабмититьс яотправляю значение
+    </script>
+    <script>
+      function deleteStr1() {
+  document.getElementById('del1').onclick= function(){
+  document.getElementById('name').value=''
+ }
+}
+function deleteStr2() {
+  document.getElementById('del2').onclick= function(){
+  document.getElementById('message').value=''
+ }
+}
+
     </script>
     
 
