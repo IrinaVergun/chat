@@ -17,7 +17,7 @@
          
          <img src="./images/delete.png" class="delete" id="del2" onclick="deleteStr2()"/>
         
-         <input type="submit" value="Отправить">
+         <input type="submit" value="Отправить" >
          
      
      </form>
@@ -38,29 +38,43 @@
         const send =  (event)=>{
             event.preventDefault()
 const name = document.getElementById('name').value
-const message = document.getElementById('message').value
-ws.send(JSON.stringify({//  мы это получили топишь имя и сообщение и теперь отправляю по вебсокету
+let message = document.getElementById('message').value
+ ws.send(JSON.stringify({//  мы это получили топишь имя и сообщение и теперь отправляю по вебсокету
 name, message
 
+
+
+
 })) 
+document.getElementById('message').value=''
+ 
+
 return false// чтобы страница не бновлялась после отправки   
         }
         const formEl = document.getElementById('messageForm')
-formEl.addEventListener('submit', send) // когда форма будет сабмититьс яотправляю значение
-    </script>
+formEl.addEventListener('submit', send)
+
+ // когда форма будет сабмититьс яотправляю значение
+
+  </script>
+ 
     <script>
       function deleteStr1() {
+        
   document.getElementById('del1').onclick= function(){
   document.getElementById('name').value=''
  }
 }
 function deleteStr2() {
+
+  
   document.getElementById('del2').onclick= function(){
   document.getElementById('message').value=''
  }
 }
 deleteStr1();
 deleteStr2();
+
     </script>
     
 
