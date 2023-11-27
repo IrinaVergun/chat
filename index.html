@@ -8,14 +8,17 @@
     
   </head>
   <body>
+    <div class="podpis">Сортируем мысли СЮДА:</div>
      <form id ='messageForm' focus="none">
-      <img src="./images/delete.png" class="delete"  id="del1" onclick="deleteStr1()"/>
+      <div class="input">
          <input type="text" name="name" id="name" placeholder="Имя:">
+         <img src="./images/delete.png" class="delete"  id="del1" onclick="deleteStr1()"/>
+        </div>
+        <div class="input">
         
-        
-         <img src="./images/delete.png" class="delete" id="del2" onclick="deleteStr2()"/>
          <input type="text" name="message" id="message" placeholder="Письмо:">
-         
+         <img src="./images/delete.png" class="delete" id="del2" onclick="deleteStr2()"/>
+        </div>
          
         
          <input type="submit" value="Отправить" class="submit" >
