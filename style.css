@@ -1,12 +1,12 @@
 .delete {
   position: absolute;
   width: 21px;
-  right: -4px;
+  right: -5px;
   top: 0;
 }
 input {
   /* margin-top: 25px; */
-  width: 292px;
+  width: 242px;
   border-radius: 6px;
 
   /* position: absolute;     */
@@ -31,5 +31,5 @@ body {
 .input {
   position: relative;
   margin-top: 25px;
-  width: 292px;
+  width: 242px;
 }
