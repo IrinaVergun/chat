@@ -9,15 +9,16 @@
   </head>
   <body>
      <form id ='messageForm' focus="none">
-         <input type="text" name="name" id="name">
+      <img src="./images/delete.png" class="delete"  id="del1" onclick="deleteStr1()"/>
+         <input type="text" name="name" id="name" placeholder="Имя:">
         
-         <img src="./images/delete.png" class="delete"  id="del1" onclick="deleteStr1()"/>
-      
-         <input type="text" name="message" id="message">
-         
+        
          <img src="./images/delete.png" class="delete" id="del2" onclick="deleteStr2()"/>
+         <input type="text" name="message" id="message" placeholder="Сообщение:">
+         
+         
         
-         <input type="submit" value="Отправить" >
+         <input type="submit" value="Отправить" class="submit" >
          
      
      </form>

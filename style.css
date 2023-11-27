@@ -1,9 +1,23 @@
-img {
-  /* padding-top: 10px; */
-
+.delete {
+  margin-left: 27%;
+  margin-top: 25px;
+  position: absolute;
   width: 20px;
 }
 input {
-  width: 90px;
+  margin-top: 25px;
+  width: 292px;
+  border-radius: 6px;
   /* position: absolute;     */
+}
+.submit {
+  width: 80px;
+  background-color: rgb(93, 93, 240);
+  border-color: rgb(93, 93, 240);
+  border-radius: 6px;
+}
+body {
+  background-color: rgb(182, 253, 253);
+}
+@media screen {
 }
